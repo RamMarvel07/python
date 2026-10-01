@@ -1,0 +1,10 @@
+import numpy as np
+a = np.array([[1, 2, 3, 4],[5, 6, 7, 8],[9, 10, 11, 12],[13, 14, 15, 16]])
+print("First row:")
+print(a[0])
+print("Last column:")
+print(a[:, -1])
+print("Diagonal elements:")
+print(np.diag(a))
+print("Second and third rows:")
+print(a[1:3])
