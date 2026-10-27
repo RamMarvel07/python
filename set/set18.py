@@ -1,0 +1,6 @@
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+unique_words = set(words)
+print("\nUnique words in the sentence:")
+print(unique_words)
+print(f"Total unique words: {len(unique_words)}")
