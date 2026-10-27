@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 480px;
+            text-align: center;
+        }
+        h2 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 15px;
+        }
+        .info-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 14px;
+        }
+        .info-box div {
+            margin-bottom: 8px;
+        }
+        .regex-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .regex-table th, .regex-table td {
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+        }
+        .regex-table th {
+            background: #eee;
+        }
+        .code {
+            font-family: monospace;
+            background: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .btn-logout {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .btn-logout:hover { background: #c82333; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🎉 Login Successful!</h2>
+    <p>Welcome to the protected page, <strong>{{ username }}</strong>!</p>
+
+    <div class="info-box">
+        <div><strong>Logged in as:</strong> {{ username }}</div>
+        <div><strong>Email:</strong> {{ email }}</div>
+        <div><strong>Status:</strong> Authenticated via Django &amp; Regex</div>
+    </div>
+
+    <h4>Regular Expressions applied in this experiment:</h4>
+    <table class="regex-table">
+        <tr>
+            <th>Field</th>
+            <th>Regex Pattern</th>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><span class="code">^[a-zA-Z][a-zA-Z0-9_]{3,14}$</span></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><span class="code">^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$</span></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><span class="code">^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$</span></td>
+        </tr>
+    </table>
+
+    <a href="{% url 'logout' %}" class="btn-logout">Logout</a>
+</div>
+
+</body>
+</html>
