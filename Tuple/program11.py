@@ -1,0 +1,7 @@
+original_tuple = (1, 2, 3, 4, 5)
+print("Original Tuple :", original_tuple)
+temp_list = list(original_tuple)  
+temp_list.append(6)                
+print("List after add :", temp_list)
+new_tuple = tuple(temp_list)       
+print("New Tuple      :", new_tuple)
